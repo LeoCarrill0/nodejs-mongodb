@@ -8,6 +8,7 @@ module.exports.ProductsController = {
     getProducts: async (req, res) =>{
         try {
             let products = await ProductsService.getAll();
+            document.write(products);
             Response.success(res, 200, 'Lista de productos', products)
         } catch (error) {
             debug(error);
